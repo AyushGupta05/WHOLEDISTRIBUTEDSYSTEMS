@@ -26,7 +26,9 @@ class DeepSeekV3ModelArgs:
     v_head_dim: int = 128 
 
     original_seq_len: int = 4096
+    #OMG IM ACTUALLY GONAN LOST ITE
     rope_theta: float = 10000.0
+
     rope_factor: float = 40
     beta_fast: int = 32
     beta_slow: int = 1
@@ -61,6 +63,12 @@ def get_nparams_and_flops(self, model: nn.Module, seq_len: int) -> tuple(int,int
         f"Total parameter count : dense {nparams_dense: ,}"
         f"sparse {nparams_sparse: ,}, (active {nparams_dense + nparams_sparse_active: ,})"
     )
+
+          f"Total parameter count : dense {nparams_dense: ,}"
+            f"sparse {nparams_sparse: ,}, (active {nparams_dense + nparams_sparse_active: ,})"
+        )
+    
+        n_layers = self.n_layers
 
     n_layers = self.n_layers
     n_heads = self.n_heads
